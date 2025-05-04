@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bukutamustyle.css">
+    <title>Buku Tamu</title>
+    <link rel="website icon" type="png" href="img/logogpy.png">
+</head>
+<body>
+    <header>
+        <div class="logoo"><img src="img/logosklh.png" width="100px" height="100px"></div>
+        <div class="logo">SMK Negeri 2 Yogyakarta</div>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn"><a href="index2.html">BERANDA</a></button>
+            </div>          
+            <div class="dropdown">
+                <button class="dropbtn">PROFIL JURUSAN</button>
+                <div class="dropdown-content">
+                    <a href="deskripsi.html">Deskripsi Singkat Tentang Jurusan</a>
+                    <a href="visimisi.html">Visi dan Misi Jurusan</a>
+                    <a href="struktur.html">Struktur Organisasi/Guru Pengampu</a>
+                    <a href="keahlian.html">Kompetensi Keahlian</a>
+                </div>
+            </div>          
+            <div class="dropdown">
+                <button class="dropbtn">PRESTASI</button>
+                <div class="dropdown-content">
+                    <a href="prestasisiswa.html">Prestasi Siswa</a>
+                </div>
+            </div>          
+            <div class="dropdown">
+                <button class="dropbtn">ALBUM</button>
+                <div class="dropdown-content">
+                    <a href="ruangkelas.html">Ruang Kelas Jurusan</a>
+                </div>
+            </div>          
+            <div class="dropdown">
+                <button class="dropbtn">BUKU TAMU</button>
+                <div class="dropdown-content">
+                    <a href="bukutamu.html">Formulir Buku Tamu</a>
+                </div>
+            </div>          
+        </nav>
+    </header>
+    <main class="pembungkus">
+        <div id="kanan">
+            <h2>Isi Buku Tamu</h2>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+            <label for="tanggal">Tanggal Berkunjung:</label>
+            <input type="date" id="tanggal">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" rows="5" required></textarea>
+            <button onclick="kirimData()">Kirim</button>
+        </div>
+        <div id="kiri">
+            <h1 id="judul">Catatan Buku Tamu</h1>
+            <div id="hasil"></div>
+        </div>
+        <script>
+            function kirimData() {
+                const nama = document.getElementById("nama").value;
+                const tanggal = document.getElementById("tanggal").value;
+                const email = document.getElementById("email").value;
+                const pesan = document.getElementById("pesan").value;
+
+                if (nama && tanggal && email && pesan) {
+                    const hasilDiv = document.getElementById("hasil");
+                    const judul = document.getElementById("judul");
+    
+                    judul.innerText = "DATA BUKU TAMU";
+                    hasilDiv.innerHTML = `
+                        <p><strong>Nama:</strong> ${nama}</p>
+                        <p><strong>Tanggal:</strong> ${tanggal}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Pesan:</strong> ${pesan}</p>
+                    `;
+    
+                    document.getElementById("nama").value = "";
+                    document.getElementById("tanggal").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("pesan").value = "";
+                } else {
+                    alert("Isi semua kolom terlebih dahulu!");
+                }
+            }
+        </script>
+        </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h1>SMK Negeri 2 Yogyakarta</h1>
+                <p>Jl. AM. Sangaji 47 Yogyakarta, Cokrodiningratan, Jetis, Yogyakarta</p>
+                <p>Telp : (0274) 513490 / (0274) 512639</p>
+            </div>
+            <div class="footer-section">
+                <h2>Jam Kerja</h2>
+                <p>Senin – Jumat</p>
+                <p>07.00 – 16.00 WIB</p>
+            </div>
+            <div class="footer-section">
+                <h2>Sosial Media</h2>
+                <div class="social-media">
+                    <a href="#"><img src="img/ig.jpg" width="30px" height="30px"></a>
+                    <a href="#"><img src="img/fb.webp" width="30px" height="30px"></a>
+                    <a href="#"><img src="img/yt.png" width="30px" height="30px"></a>
+                    <a href="#"><img src="img/tt.png" width="30px" height="30px"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h2>Maps</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1202936746936!2d110.36479467412038!3d-7.777067577155136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58373fffffff%3A0xa4ec1ca156555926!2sSMK%20Negeri%202%20Yogyakarta!5e0!3m2!1sid!2sid!4v1745281636866!5m2!1sid!2sid"></iframe>
+            </div>
+            </div>
+        </div>
+    </footer>
+</html>
